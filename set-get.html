@@ -1,0 +1,70 @@
+<script>
+    class Employ {
+        constructor(name, id) {
+            this.name = name,
+                this.id = id
+        }
+        printName() {
+            console.log(this.name)
+        }
+    }
+    let employ = new Employ("lokesh", 34)
+    console.log(employ)
+
+
+    class Manager extends Employ {
+        #salary
+        constructor(name, id, salary) {
+            super(name, id)
+            this.#salary = salary
+        }
+        get salary() {
+            return this.#salary
+        }
+       set salary(val) {
+            this.#salary -= val
+            return this.#salary
+        }
+        static printHello() {
+            console.log("hellowwww......")
+        }
+    }
+
+    let m1 = new Manager("lokesh kumawat", 243, 200)
+    console.log(m1.salary)
+    // console.log(m1.inceraseSalary(200))
+    console.log(m1.salary=100)
+    console.log(m1)
+// 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

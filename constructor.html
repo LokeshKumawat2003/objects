@@ -1,0 +1,60 @@
+<script>
+    Employ.prototype.printname = function () {
+        console.log(this.name)
+    }
+    function Employ(name, id) {
+        this.name = name,
+            this.id = id
+        return this
+    }
+    let Employ1 = new Employ("lokesh", 454)
+    console.log(Employ1)
+
+Object.setPrototypeOf(Manager.prototype,Employ.prototype)
+
+    Manager.prototype.incresesalary = function (val) {
+        this.salary += val;
+        return this.salary
+
+    }
+    Manager.prototype.decrease = function (val) {
+        if (this.salary>= val) {
+            this.salary -= val;
+            return this.salary
+        }
+    }
+
+    function Manager(name, id, salary) {
+     Employ.call(this,name,id)
+        this.salary = salary
+    }
+    let m1 = new Manager("Lokesh kumawat", "we434", 100)
+    console.log(m1)
+    console.log(m1.incresesalary(1000))
+    console.log(m1.decrease(200))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

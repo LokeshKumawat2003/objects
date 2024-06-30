@@ -1,0 +1,67 @@
+<script>
+    // 1. function name;
+    // 2. properties -name id, age;
+    // 3. method - print name - print the name of employ;
+
+    Employ.prototype.printName = function () {
+        console.log(this.name)
+    }
+    function Employ(name, id) {
+        let obj = {}
+        obj.name = name,
+            obj.id = id
+        Object.setPrototypeOf(obj, Employ.prototype)
+        return obj
+
+    }
+    let Employconsole = Employ("lokesg", 24)
+
+    console.log(Employconsole) //outerfunction
+    // console.log(Employconsole.printName()) // innerfunction
+
+
+    Manager.prototype.increasesalary = function (val) {
+
+        this.salary += val;
+        return this.salary
+
+    }
+    Manager.prototype.decresalary = function (val) {
+        if(this.salary>=0){
+        this.salary -= val;
+        return this.salary
+        }
+
+    }
+
+    function Manager(name, id, salary) {
+        let obj = {}
+        obj.name = name,
+            obj.id = id,
+            obj.salary = salary,
+            Object.setPrototypeOf(obj, Manager.prototype)
+        return obj
+    }
+    let manager = Manager("kumawat", 34, 5000);
+    // console.log(manager.increasesalary(5000))
+    console.log(manager,manager.decresalary(6000))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
